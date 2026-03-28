@@ -10,7 +10,6 @@
 		<xs:sequence>
 			<xs:element name="NationalPark" type="NationalParkDetails" minOccurs="1" maxOccurs="unbounded"></xs:element>
 		</xs:sequence>
-		<xs:attribute name="Rating" type="xs:decimal" use="optional"></xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="NationalParkDetails">
 		<xs:sequence>
@@ -18,7 +17,7 @@
 			<xs:element name="Phone" type="PhoneType" minOccurs="1" maxOccurs="unbounded"></xs:element>
 			<xs:element name="Address" type="AddressType" minOccurs="1" maxOccurs="1"></xs:element>
 		</xs:sequence>
-		
+		<xs:attribute name="Rating" type="xs:decimal" use="optional"></xs:attribute>
 	</xs:complexType>
 
 	<xs:simpleType name="PhoneType">
