@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="XMLSchema1"
+    targetNamespace="http://tempuri.org/XMLSchema1.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/XMLSchema1.xsd"
+    xmlns:mstns="http://tempuri.org/XMLSchema1.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="NationalParks" type="NationalParksType"></xs:element>
+	<xs:complexType name="NationalParksType">
+		<xs:sequence>
+			<xs:element name="NationalPark" type="NationalParkDetails" minOccurs="1" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="Rating" type="xs:decimal" use="optional"></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="NationalParkDetails">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"></xs:element>
+			<xs:sequence>
+				<xs:element name="Phone" type="PhoneType" minOccurs="1" maxOccurs="unbounded"></xs:element>
+			</xs:sequence>
+			<xs:element name="Address" type="AddressType" minOccurs="1" maxOccurs="1"></xs:element>
+		</xs:sequence>
+		
+	</xs:complexType>
+
+	<xs:simpleType name="PhoneType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{3}\-\d{3} \d{4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="AddressType">
+		<xs:sequence>
+			<xs:element name="Number" minOccurs="1" maxOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:int"></xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Street" minOccurs="1" maxOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string"></xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="City" minOccurs="1" maxOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string"></xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="State" minOccurs="1" maxOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string"></xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Zip" minOccurs="1" maxOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:int"></xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="NearestAirport" type="xs:string" use="required"></xs:attribute>
+	</xs:complexType>
+	
+</xs:schema>
