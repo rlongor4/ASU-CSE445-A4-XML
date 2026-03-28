@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="XMLSchema1"
+<xs:schema id="XMLSchemaNationalParks"
     targetNamespace="http://tempuri.org/XMLSchema1.xsd"
     elementFormDefault="qualified"
     xmlns="http://tempuri.org/XMLSchema1.xsd"
@@ -15,9 +15,7 @@
 	<xs:complexType name="NationalParkDetails">
 		<xs:sequence>
 			<xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"></xs:element>
-			<xs:sequence>
-				<xs:element name="Phone" type="PhoneType" minOccurs="1" maxOccurs="unbounded"></xs:element>
-			</xs:sequence>
+			<xs:element name="Phone" type="PhoneType" minOccurs="1" maxOccurs="unbounded"></xs:element>
 			<xs:element name="Address" type="AddressType" minOccurs="1" maxOccurs="1"></xs:element>
 		</xs:sequence>
 		
@@ -25,7 +23,7 @@
 
 	<xs:simpleType name="PhoneType">
 		<xs:restriction base="xs:string">
-			<xs:pattern value="\d{3}\-\d{3} \d{4}"/>
+			<xs:pattern value="\d{3}\-\d{3}-\d{4}"/>
 		</xs:restriction>
 	</xs:simpleType>
 
